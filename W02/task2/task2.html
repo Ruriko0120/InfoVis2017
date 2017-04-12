@@ -1,0 +1,58 @@
+<html>
+ <head>
+   <title>Task2</title>
+   </head>
+   <body>
+   <script src="vec3.js"></script>
+    <form name = "inform">
+  x0<input type=text name="X0" value="">, 
+  y0<input type=text name="Y0" value="">,
+  z0<input type=text name="Z0" value=""><br>
+  x1<input type=text name="X1" value="">, 
+  y1<input type=text name="Y1" value="">,
+  z1<input type=text name="Z1" value=""><br> 
+  x2<input type=text name="X2" value="">, 
+  y2<input type=text name="Y2" value="">,
+  z2<input type=text name="Z2" value=""><br>
+  <input type=button value="Enter" onClick="test()"><br>
+  </form>
+
+   <script>
+  var x0,y0,z0;
+  var x1,y1,z1;
+  var x2,y2,z2;
+ 
+   
+   
+   function test(){
+      x0 = document.inform.X0.value;
+      x0 = parseInt(x0);
+      y0 = document.inform.Y0.value;
+      y0 = parseInt(y0);
+      z0 = document.inform.Z0.value;
+      z0 = parseInt(z0);
+      x1 = document.inform.X1.value;
+      x1 = parseInt(x1);
+      y1 = document.inform.Y1.value;
+      y1 = parseInt(y1);
+      z1 = document.inform.Z1.value;
+      z1 = parseInt(z1);
+      x2 = document.inform.X2.value;
+      x2 = parseInt(x2);
+      y2 = document.inform.Y2.value;
+      y2 = parseInt(y2);
+      z2 = document.inform.Z2.value;
+      z2 = parseInt(z2);
+      var v0 = new Vec3(x0,y0,z0);
+      var v1 = new Vec3(x1,y1,z1);
+      var v2 = new Vec3(x2,y2,z2);
+
+      var S = AreaOfTriangle(v0,v1,v2);
+
+      document.write("the area of triangle is "+ S);
+   }
+
+
+   </script>
+   </body>
+   </html>
