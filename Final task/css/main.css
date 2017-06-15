@@ -37,7 +37,7 @@ h1 {
 }
 
 #container input:hover + label {
-	background: #ddd;  /* Fondo de las pestañas al pasar el cursor por encima */
+	background:#ddd;  /* Fondo de las pestañas al pasar el cursor por encima */
 	color: #666;  /* Color del texto de las pestañas al pasar el cursor por encima */
 }
 

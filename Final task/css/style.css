@@ -10,8 +10,8 @@
 body {
  
   text-align: left;
-  font-family: Lato;
-  color: #fff;
+  font-family: arial black;
+  color:white;
  
 }
 
@@ -35,11 +35,10 @@ h1 span {
   float: none;
   list-style: none;
   position: relative;
-  
   text-align: left;
 }
 .tabs li {
-  float: left;
+  float: center;
   display: block;
 }
 .tabs input[type="radio"] {
@@ -67,7 +66,7 @@ h1 span {
   background: gray;
 }
 .tabs .tab-content {
-  z-index: 2;
+  z-index: 1;
   display: none;
   overflow: hidden;
   width: 100%;
@@ -110,19 +109,25 @@ p.link a:hover {
 }
 input[type=text]{
      font-family: Lato;
-     font-size: 16px;
+     font-size: 18px;
+     -webkit-border-radius: 10px;
+     -moz-border-radius: 10px;
+     border-radius: 10px;
+     -moz-box-shadow: inset 0 0 4px rgba(0,0,0,0.2);
+    -webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);
+     box-shadow: inner 0 0 4px rgba(0, 0, 0, 0.2);
 }
 
 input[type=button] {
-     font-family: Lato;
+     font-family: arial black;
       color: #fff;
       padding:7px;
       border:1px solid gray;
       border-radius:5px;
-      background-color: black; 
+      background-color: pink; 
 }
 input[type=button]:hover {
-  background-color: darkgray;
+  background-color: black;
   cursor:pointer;
 }
 

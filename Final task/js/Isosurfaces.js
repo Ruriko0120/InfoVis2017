@@ -1,6 +1,4 @@
-
-
-function Isosurfaces( volume, isovalue, cmap, mat, shape )
+function Isosurfaces( volume, isovalue, cmap, mat, shape, color )
 {
     var material;
     switch(mat)
@@ -12,7 +10,7 @@ function Isosurfaces( volume, isovalue, cmap, mat, shape )
             material = new THREE.MeshLambertMaterial();
         break;
         case 3:
-            material = new THREE.MeshPhongMaterial();
+            material = new THREE.MeshPhongMaterial({shininess:50,emissive:0x222200});
         break;
        
     }
@@ -91,19 +89,13 @@ function Isosurfaces( volume, isovalue, cmap, mat, shape )
 
             for ( var i = 0; i < nfaces; i++ )
             {
-                var C0 = new THREE.Color().setHex( cmap[ isovalue ][1] );
-                var C1 = new THREE.Color().setHex( cmap[ isovalue ][1] );
-                var C2 = new THREE.Color().setHex( cmap[ isovalue ][1] );
+                var C0 = new THREE.Color().setHex(color);
+                var C1 = new THREE.Color().setHex(color);
+                var C2 = new THREE.Color().setHex(color);
                 geometry.faces[i].vertexColors.push( C0 );
                 geometry.faces[i].vertexColors.push( C1 );
                 geometry.faces[i].vertexColors.push( C2 );
             }
-        break;
-        case 3:
-            geometry = new THREE.TorusKnotGeometry( 11, 3.7, 10, 7, 4, 3 );
-        break; 
-        case 2:
-            geometry = new THREE.BoxGeometry( 1, 1, 1 );
         break;
     }
 

@@ -34,16 +34,16 @@ function main()
     {
         surfaces = null;
         var value = document.getElementById("iso").value;
-        surfaces = Isosurfaces(volume, parseInt(value), cmap, currentMaterial, currentShape);
+        surfaces = Isosurfaces(volume, parseInt(value), cmap, currentMaterial, currentShape, currentColor);
         
        
     }
     else
     {
-
         var n1 = parseFloat($('#normal1 option:selected').text());
         var n2 = parseFloat($('#normal2 option:selected').text());
         var n3 = parseFloat($('#normal3 option:selected').text());
+
         if((n1 == 0 && n2 == 0) && n3 == 0)
         {
             alert("Normal vector cannot have length 0. I will calculate with vector (0,0,1)");
@@ -56,17 +56,6 @@ function main()
     }
     screen.scene.add( surfaces );
     surfaces.material.side = THREE.DoubleSide;
-    if(currentShape != 1)
-    {
-        surfaces.material.color.setHex( currentColor);
-        if(currentShape == 2)
-            surfaces.scale.set( 25, 25, 25 );
-        else    
-            surfaces.scale.set( 2, 2, 2 );
-        surfaces.position.setX(60);
-        surfaces.position.setY(70); 
-        surfaces.position.setZ(10); 
-    }
     screen.renderer.setClearColor( 0xffffff, 1);
     document.addEventListener( 'mousemove', function() {
         screen.light.position.copy( screen.camera.position );
@@ -201,50 +190,4 @@ $( function() {
                         main();
                     }
                 } );
-
             });
-
-            $( function() {
-                
-                $( '#cd-dropdown1' ).dropdown( {
-                    gutter : 5,
-                    delay : 100,
-                    random : true,
-                    onOptionSelect: function(opt){
-                        
-                        switch(opt.text())
-                        {
-                            case "Lobster": 
-                            $('#colormaps1').show();
-                            $('#trf').show();
-                            $('#colorinput').hide();
-                            $('#lbl').hide();
-                            currentShape = 1;
-                            break;
-                            case "Cube": 
-                            $('#colormaps1').hide();
-                            $('#trf').hide();
-                            $('#colorinput').show();
-                            $('#lbl').show();
-                            currentShape = 2;
-                            break;
-                            case "Star": 
-                            $('#colormaps1').hide();
-                            $('#trf').hide();
-                            $('#colorinput').show();
-                            $('#lbl').show();
-                            currentShape = 3;
-                            break;
-                        }
-                        $('canvas').remove();
-                        main();
-                    }
-                } );
-
-            });
-
-           
-
-
-
-

@@ -19,7 +19,7 @@
 
 	// the options
 	$.DropDown.defaults = {
-		speed : 300,
+		speed : 100,
 		easing : 'ease',
 		gutter : 0,
 		// initial stack effect
@@ -160,11 +160,11 @@
 				$( this ).css( {
 					opacity : 1,
 					top : self.options.rotated ? self.size.height + self.options.gutter : ( i + 1 ) * ( self.size.height + self.options.gutter ),
-					left : self.options.random ? Math.floor( Math.random() * 11 - 5 ) : 0,
+					left : self.options.random ? Math.floor( 0 ) : 0,
 					width : self.size.width,
 					marginLeft : 0,
 					transform : self.options.random ?
-						'rotate(' + Math.floor( Math.random() * 11 - 5 ) + 'deg)' :
+						'rotate(' + Math.floor( 0) + 'deg)' :
 						self.options.rotated ?
 							self.options.rotated === 'right' ?
 								'rotate(-' + ( i * 5 ) + 'deg)' :

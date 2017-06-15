@@ -19,7 +19,7 @@
 }
 
 .cd-active.cd-dropdown > span {
-	color: #4d8c9d;
+	color: pink;
 }
 
 .cd-active.cd-dropdown > span,
@@ -36,6 +36,6 @@
 }
 
 .cd-active.cd-dropdown ul li span:hover {
-	background: #4d8c9d;
+	background: pink;
 	color: #fff;
 }
